@@ -32,7 +32,7 @@ class ApiController {
             })
             return;
         }
-        Topic.find({ lessonId: req.query.lessonId }).then(topic => {
+        Topic.find({ lessonId: req.query.lessonId }).sort({ index: 1 }).then(topic => {
             res.json({
                 isSuccess: true,
                 code: 200,

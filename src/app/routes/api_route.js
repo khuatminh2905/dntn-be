@@ -12,7 +12,7 @@ const LoginController = require('../controllers/LoginController')
 
 
 //lesson
-route.get('/get-lesson', apiController.getAllLesson)
+route.get('/get-lesson', apiController.getA3dc  llLesson)
 
 route.get('/sendmail_user', feedback.sendMailFeedBack)
 

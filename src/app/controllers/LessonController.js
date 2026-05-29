@@ -128,6 +128,7 @@ class LessonController {
                 for (var i in xlData) {
                     Topic({
                         lessonId: newLesson._id,
+                        index: parseInt(i),
                         title: xlData[i].title,
                         content: xlData[i].content
                     }).save().catch((error) => {
@@ -217,7 +218,7 @@ class LessonController {
             var lessons = await Lesson.find({})
             var listData = []
             for (var i of lessons) {
-                const topic = await Topic.find({ lessonId: i._id })
+                const topic = await Topic.find({ lessonId: i._id }).sort({ index: 1 })
                 console.log(topic)
                 listData.push({
                     lessonID: i._id,
